@@ -803,7 +803,7 @@ static int __init i2clcd857_init(void)
 
 static void __exit i2clcd857_exit(void)
 {
-
+    lcdsetbacklight(data, 0);
     unregister_chrdev(major, DEVICE_NAME);
 
     sysfs_remove_group(&lcdi2c_device->kobj, &i2clcd_device_attr_group);
